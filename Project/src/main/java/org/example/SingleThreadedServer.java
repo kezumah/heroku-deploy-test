@@ -62,7 +62,7 @@ public class SingleThreadedServer {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         try {
-            int port = Integer.parseInt(args[0]);
+            int port = 100;
             System.out.println("Server listening on port: " + port + " ...");
             SingleThreadedServer newServer = new SingleThreadedServer(port);
         } catch (InputMismatchException ex) {
