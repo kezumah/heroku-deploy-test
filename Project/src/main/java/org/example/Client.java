@@ -10,6 +10,7 @@ import java.util.InputMismatchException;
 public class Client {
 
     private InetAddress internetAddress;
+
     private DatagramSocket ds;
     private int defaultArrayLength = 8192;
     private int ServerPort;
@@ -55,7 +56,7 @@ public class Client {
 
     public static void main(String[] args) throws IOException, InputMismatchException {
         try {
-            String host = HOST;
+            String ServerURL = "www.udp-server-java.herokuapp.com";
             int ServerPort = Integer.parseInt(args[0]);
             String message = args[1];
 
@@ -63,7 +64,7 @@ public class Client {
             System.out.println("CLIENT-LOG" + getTimeStamp() + " -> Preparing to send the following message to the server: " + message);
 
             // send message to server
-            Client testClient = new Client(host, ServerPort);
+            Client testClient = new Client(ServerURL, ServerPort);
             testClient.sendMsgToServer(message);
 
         } catch (ConnectException ex) {
